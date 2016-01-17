@@ -1,0 +1,22 @@
+{
+  "name": "frontend-test-project",
+  "description": "Demo project to Pixel2HTML",
+  "main": "",
+  "authors": [
+    "Syed Haroon (seek.syed@gmail.com)"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.haroon.in/",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.4"
+  }
+}
