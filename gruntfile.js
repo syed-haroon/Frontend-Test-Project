@@ -7,15 +7,22 @@ module.exports = function (grunt) {
         banner: '//------------------ Concatenated Script -------------------\n'
       },
       dist: {
-        src: ['components/scripts/*.js'],
+        src: ['components/javascripts/*.js'],
         dest: 'builds/development/javascripts/script.js'
       }
     }, // concat
 
+    bower_concat: {
+      all: {
+        dest: 'builds/development/javascripts/_bower.js',
+        cssDest: 'builds/development/stylesheets/_bower.css'
+      }
+    }, // bower_concat
+
     sass: {
       dist: {
         options: {
-          style: 'expanded'
+          style: 'compressed'
         },
         files: [{
           src: 'components/sass/style.scss',
@@ -35,12 +42,6 @@ module.exports = function (grunt) {
       }
     }, //connect
 
-    wiredep: {
-      task: {
-        src: 'builds/development/**/*.html'
-      }
-    }, // wiredep
-
     watch: {
       options: {
         spawn: false,
@@ -50,7 +51,7 @@ module.exports = function (grunt) {
         files: [
           'builds/development/**/*.html',
           'components/javascripts/**/*.js',
-          'components/sass/**/*.js'
+          'components/sass/**/*.scss'
         ],
         tasks: ['concat', 'sass']
 
@@ -63,8 +64,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-wiredep');
-
-  grunt.registerTask('default', ['wiredep', 'concat', 'sass', 'connect', 'watch']);
+  grunt.loadNpmTasks('grunt-bower-concat');
+  grunt.registerTask('default', ['bower_concat', 'concat', 'sass', 'connect', 'watch']);
 
 }; // Wrapper Function

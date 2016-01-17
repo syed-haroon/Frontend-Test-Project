@@ -2,27 +2,75 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
   <title>Frontend Test Project</title>
 
-  <!-- bower:css -->
-  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css" />
-  <!-- endbower -->
-
+  <link rel="stylesheet" href="stylesheets/_bower.css">
   <link rel="stylesheet" href="stylesheets/style.css">
+
 </head>
 <body>
-<h1>Frontend Test Project by Syed Haroon</h1>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12"></div>
+<div class="signup-container-outer">
+  <div class="signup-container">
+    <div class="signup-header text-center">
+      <div class="row">
+        <div class="col-xs-3 col-sm-12 logo-wrap">
+          <img class="img-responsive" src="images/logo.svg" alt="Pixel2HTML Logo"/>
+        </div>
+        <div class="col-xs-9 col-sm-12 page-title-wrap">
+          <div class="page-title">
+            <h4>Create new account</h4>
+            <h5>Enter your credentials below</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="signup-body">
+      <form id="signup-form" data-parsley-validate>
+        <div class="row">
+          <div class="form-group col-sm-7">
+            <label for="fullNameInput">Full name</label>
+            <input type="text" class="form-control input-lg" id="fullNameInput" name="fullName" required="" placeholder="Name and surname">
+          </div>
+          <div class="form-group col-sm-5">
+            <label for="usernameInput">Username</label>
+            <input type="text" class="form-control input-lg" id="usernameInput" name="username" required="" placeholder="Username">
+          </div>
+          <div class="form-group col-sm-12">
+            <label for="emailInput">Email address</label>
+            <input type="email" class="form-control input-lg" id="emailInput" name="email" required="" placeholder="Email address">
+          </div>
+          <div class="form-group col-sm-7">
+            <label for="countryInput">Country</label>
+            <input type="text" class="form-control input-lg" id="countryInput" name="country" required="" placeholder="Country">
+          </div>
+          <div class="form-group col-sm-5">
+            <label for="cityInput">City</label>
+            <input type="text" class="form-control input-lg" id="cityInput" name="city" required="" placeholder="City">
+          </div>
+          <div class="form-group form-input-group col-sm-12">
+            <label for="passwordInput">Password</label>
+            <input type="password" class="form-control input-lg" id="passwordInput" name="password" required="" placeholder="Password">
+            <input type="password" class="form-control input-lg" id="repeatPasswordInput" name="repeatPassword" required="" placeholder="Repeat Password">
+          </div>
+          <div class="form-group checkbox col-sm-7">
+            <label class="i-accept">
+              <input type="checkbox" name="iAccept" required=""> I Accept the <a href="#">Terms &amp; Conditions</a>
+            </label>
+          </div>
+          <div class="col-sm-5">
+            <button type="submit" class="btn btn-lg btn-success btn-block">Create Account</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
+  <div class="have-account text-center">Have account already? <a href="#">Sign in</a></div>
 </div>
 
-<!-- bower:js -->
-<script src="../../bower_components/jquery/dist/jquery.js"></script>
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<!-- endbower -->
-
+<script type="text/javascript" src="javascripts/_bower.js"></script>
 <script type="text/javascript" src="javascripts/script.js"></script>
+
 </body>
 </html>

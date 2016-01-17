@@ -1,3 +1,175 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+$bg-white: #FFFFFF;
+$bg-green: #67C60B;
+
+$border-color: #D4D8DF;
+$divider-color: #D4D8DF;
+$placeholder-color: #D0D0D0;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
   background-color: #f4f5f5;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.signup-container-outer {
+  margin: auto;
+  padding: 15px;
+  max-width: 750px;
+}
+
+.signup-container {
+  background-color: $bg-white;
+  border: 1px solid $border-color;
+  @include border-radius(6px);
+}
+
+.signup-header {
+
+  padding: 40px 0 42px;
+
+  h4 {
+    margin: 0 0 8px;
+  }
+
+  h5 {
+    margin: 0;
+    color: #8890a4;
+    font-weight: 300;
+  }
+
+  img {
+    max-width: 75px;
+  }
+
+  .logo-wrap {
+    padding-bottom: 27px;
+  }
+
+}
+
+.signup-body {
+  padding: 38px 124px 60px;
+  border-top: 1px solid $divider-color;
+}
+
+.i-accept,
+.have-account {
+  color: #8890a4;
+}
+
+.have-account {
+  color: #8890a4;
+  padding: 25px 0;
+}
+
+@media (max-width: 767px) {
+
+  .signup-container-outer {
+    padding: 5px;
+  }
+
+  .signup-header {
+
+    padding: 15px 15px 20px;
+
+    img {
+      max-width: 50px;
+    }
+
+    .page-title {
+      float: left
+    }
+
+    .logo-wrap {
+      width: 75px;
+      padding: 5px 0 0 15px;
+    }
+
+    .page-title-wrap {
+      padding: 20px 0 0 5px;
+    }
+  }
+
+  .signup-body {
+    padding: 16px 20px 20px;
+  }
+
+  .i-accept {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+
+  .have-account {
+    padding: 20px 0;
+  }
+
+}
+
+/* Bootstrap Override */
+
+label {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.btn-success {
+  background-color: $bg-green;
+}
+
+.form-control {
+  font-weight: 300;
+}
+
+.input-lg {
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.img-responsive {
+  display: inline-block;
+}
+
+.form-group {
+  @media (min-width: 768px) {
+    margin-bottom: 28px;
+  }
+  &.form-input-group:not(.has-error):not(.has-success) {
+    label + .input-lg {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    label + .input-lg + .input-lg {
+      border-top: none;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}
+
+.form-control::-moz-placeholder {
+  color: $placeholder-color;
+}
+
+.form-control:-ms-input-placeholder {
+  color: $placeholder-color;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: $placeholder-color;
 }
